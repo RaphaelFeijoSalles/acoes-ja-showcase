@@ -9,6 +9,18 @@
 </p>
 
 <p align="center">
+  <a href="#sobre">Sobre</a> •
+  <a href="#arquitetura">Arquitetura</a> •
+  <a href="#fluxo">Fluxo de dados</a> •
+  <a href="#diagramas">Diagramas de fluxo</a> •
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#documentacao">Documentação</a> •
+  <a href="#decisoes">Decisões de Design</a> •
+  <a href="#capturas">Capturas de Tela</a>
+</p>
+
+<!--
+<p align="center">
   <a href="#-sobre-o-projeto">Sobre</a> •
   <a href="#-architecture">Arquitetura</a> •
   <a href="#-data-pipeline">Data Pipeline</a> •
@@ -16,20 +28,20 @@
   <a href="#-design-decisions">Design Decisions</a> •
   <a href="#-screenshots">Screenshots</a>
 </p>
-
+-->
 ---
 
+<a id="sobre"></a>
 ## 📌 Sobre o Projeto
 
 O **AçõesJá** é um ecossistema full-stack projetado para democratizar o acesso a dados financeiros de alta qualidade. O sistema ingere, processa e analisa gigabytes de dados contábeis diretamente da **CVM** (Comissão de Valores Mobiliários) e os cruza com cotações em tempo real da **B3**.
 
 O objetivo não é apenas exibir números, mas oferecer insights de investimento instantâneos através de um motor de regras e análise automatizada, apresentados em um dashboard interativo e de alta performance.
 
-## 🏗️ Architecture
+<a id="arquitetura"></a>
+## 🏗️ Arquitetura
 
 O sistema foi desenhado com foco em separação de responsabilidades, escalabilidade e manutenção a longo prazo, utilizando princípios de **Clean Architecture** e **Domain-Driven Design (DDD)** no backend, e uma abordagem baseada em componentes modulares no frontend.
-
-
 
 ### Fluxo Principal:
 1. **Client Layer:** SPA em React consumindo dados via chamadas REST otimizadas.
@@ -37,18 +49,18 @@ O sistema foi desenhado com foco em separação de responsabilidades, escalabili
 3. **Domain & Application:** Lógica de negócio pura (análise fundamentalista, valuation) isolada de frameworks externos.
 4. **Data & External:** Persistência no PostgreSQL e integrações com APIs de mercado (B3) e extração de arquivos da CVM.
 
-## ⚙️ Data Pipeline
+<a id="fluxo"></a>
+## ⚙️ Fluxo de dados
 
 Um dos maiores desafios técnicos do projeto foi garantir a consistência de dados governamentais massivos e formatados de maneira irregular.
-
-
 
 Nosso módulo `Importer` funciona como uma esteira **ETL (Extract, Transform, Load)** robusta:
 * **Ingestão:** Processamento em lote (Batch Processing) de arquivos pesados da CVM.
 * **Classificação:** Utilização do *Strategy Pattern* (`AccountClassifier`) para categorizar contas contábeis dinamicamente.
 * **Rastreabilidade:** Auditoria completa desde a linha do CSV bruto até a consolidação do indicador calculado (P/L, ROE).
 
-## 📐 Arquitetura de Fluxos (Sequence Diagrams)
+<a id="diagramas"></a>
+## 📐 Diagramas de fluxo
 
 Para garantir a separação de responsabilidades (Clean Architecture), o sistema orquestra as requisições passando por camadas bem definidas: **API**, **Domain** (onde reside a regra de negócio) e **Infrastructure**.
 
@@ -146,6 +158,7 @@ sequenceDiagram
     Local-->>Sync: Done
 ```
 
+<a id="tecnologias"></a>
 ## 🛠️ Tecnologias
 
 A stack foi escolhida para garantir máxima tipagem, performance e segurança de ponta a ponta.
@@ -165,13 +178,15 @@ Construído para processamento pesado e estabilidade institucional.
 * **Security:** Spring Security + JWT (Autenticação Stateless).
 * **Design Patterns:** Clean Architecture, DDD, Strategy, Factory.
 
-## 📖 API Documentation
+<a id="documentacao"></a>
+## 📖 Documentação da API
 
 A API foi projetada para ser consumida de forma intuitiva. Toda a documentação dos endpoints, contratos de requisição/resposta (DTOs) e esquemas de autenticação estão disponíveis de forma interativa(javadoc).
 
 🔗 **[Acessar Swagger UI Completo](https://raphaelfeijosalles.github.io/acoes-ja-showcase/)**
 
-## 🧠 Design Decisions
+<a id="decisoes"></a>
+## 🧠 Decisões de design
 
 Decisões de engenharia tomadas para resolver problemas reais de domínio complexo:
 
@@ -190,7 +205,8 @@ Ao processar gigabytes de dados, uma linha mal formatada não pode derrubar a es
 * **Decisão:** Implementação de um sistema de quarentena. Linhas do CSV que falham na validação estrutural ou lógica são desviadas para uma tabela de *Quarentena*, permitindo que o pipeline termine o processamento do restante do arquivo.
 * **Impacto:** Tolerância a falhas elevada. Os dados em quarentena podem ser analisados e reprocessados posteriormente.
 
-## 📸 Screenshots
+<a id="capturas"></a>
+## 📸 Capturas de tela
 
 <table>
   <tr>
