@@ -167,9 +167,9 @@ Construído para processamento pesado e estabilidade institucional.
 
 ## 📖 API Documentation
 
-A API foi projetada para ser consumida de forma intuitiva. Toda a documentação dos endpoints, contratos de requisição/resposta (DTOs) e esquemas de autenticação estão disponíveis de forma interativa.
+A API foi projetada para ser consumida de forma intuitiva. Toda a documentação dos endpoints, contratos de requisição/resposta (DTOs) e esquemas de autenticação estão disponíveis de forma interativa(javadoc).
 
-🔗 **[Acessar Swagger UI Completo](#)** *(Link temporário para demonstração: `https://raphaelfeijosalles.github.io/acoes-ja-showcase/` rodando localmente).*
+🔗 **[Acessar Swagger UI Completo](https://raphaelfeijosalles.github.io/acoes-ja-showcase/)**
 
 ## 🧠 Design Decisions
 
