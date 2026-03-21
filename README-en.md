@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>Financial Market Intelligence Platform for Stock and Cryptocurrency Analysis.</strong>
+  <strong>Financial Market Intelligence Platform for Stock Analysis with AI.</strong>
 </p>
 
 <p align="center">
@@ -180,7 +180,7 @@ sequenceDiagram
 
 The complete and interactive API documentation, including all endpoints, DTOs, and authentication schemes, is available via Javadoc and can be viewed on the GitHub Pages deployment of this repository.
 
-🔗 **[Access Full Documentation](https://raphaelfeijosalles.github.io/acoes-ja-showcase/)**
+🔗 **[Access Full Documentation](https://raphaelfeijosalles.github.io/acoes-ja-showcase/apidocs)**
 
 ---
 

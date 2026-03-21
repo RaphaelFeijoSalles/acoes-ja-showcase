@@ -1,11 +1,11 @@
-[🇧🇷 Portuguese Version](README.md)
+[🇺🇸 English Version](README-en.md)
 
 <p align="center">
   <img src="images/acoes-ja-banner.png" alt="AçõesJá Banner">
 </p>
 
 <p align="center">
-  <strong>Financial Market Intelligence Platform for Stock and Cryptocurrency Analysis.</strong>
+  <strong>Plataforma de Inteligência de Mercado Financeiro para Análise de Ações com IA.</strong>
 </p>
 
 <p align="center">
@@ -18,12 +18,12 @@
 
 <p align="center">
   <a href="#-screenshots">Screenshots</a> •
-  <a href="#-about-the-project">About</a> •
-  <a href="#-key-features">Features</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-data-flows">Flows</a> •
-  <a href="#-design-decisions-adr">ADRs</a> •
-  <a href="#-api-documentation">API</a>
+  <a href="#-sobre-o-projeto">Sobre</a> •
+  <a href="#-principais-funcionalidades">Funcionalidades</a> •
+  <a href="#-arquitetura">Arquitetura</a> •
+  <a href="#-fluxos-de-dados">Fluxos</a> •
+  <a href="#-decisões-de-design-adr">ADRs</a> •
+  <a href="#-documentação-da-api">API</a>
 </p>
 
 <a id="-screenshots"></a>
@@ -33,72 +33,72 @@
   <tr>
     <td valign="top" width="50%">
       <br>
-      <b>Main Dashboard</b>
+      <b>Dashboard Principal</b>
       <img src="images/main-dashboard.png">
       <br>
-      <i>General overview of market indexes, quotes, and portfolio.</i>
+      <i>Visualização geral de índices, cotações e portfólio.</i>
     </td>
     <td valign="top" width="50%">
       <br>
-      <b>Asset Analysis (PETR4)</b>
+      <b>Análise de Ativo (PETR4)</b>
       <img src="images/asset-detail-view.png" width="100%" alt="Asset Detail View">
       <br>
-      <i>Dynamic charts and fundamental indicators like P/E and ROE.</i>
+      <i>Gráficos dinâmicos e indicadores fundamentalistas como P/L e ROE.</i>
     </td>
   </tr>
   <tr>
     <td valign="top" width="50%">
       <br>
-      <b>Annual Tabular View</b>
+      <b>Visualização Anual Tabular</b>
       <img src="images/tabular-data-view.png" width="100%" alt="tabular data view">
       <br>
-      <i>Compare annual financial statements in detail.</i>
+      <i>Compare detalhadamente as demonstrações financeiras anuais.</i>
     </td>
     <td valign="top" width="50%">
       <br>
-      <b>Unified Search Engine</b>
+      <b>Motor de Busca Unificada</b>
       <img src="images/search-modal.png" width="100%" alt="Search Modal">
       <br>
-      <i>Quickly search for stocks, REITs, BDRs, and cryptocurrencies.</i>
+      <i>Pesquisa rápida por ações, FIIs, BDRs e criptomoedas.</i>
     </td>
   </tr>
 </table>
 
-<a id="-about-the-project"></a>
-## 📌 About the Project
+<a id="-sobre-o-projeto"></a>
+## 📌 Sobre o Projeto
 
-**AçõesJá** is a full-stack ecosystem designed to democratize access to high-quality financial data. The system ingests, processes, and analyzes gigabytes of accounting data directly from Brazil's SEC (**CVM**) and cross-references it with real-time quotes from the **B3** stock exchange and crypto markets. The goal is not just to display numbers, but to offer investment insights through an automated analysis engine, presented in a high-performance, interactive dashboard.
+O **AçõesJá** é um ecossistema full-stack projetado para democratizar o acesso a dados financeiros de alta qualidade. O sistema ingere, processa e analisa gigabytes de dados contábeis diretamente da **CVM** e os cruza com cotações em tempo real da **B3** e de mercados de criptoativos. O objetivo não é apenas exibir números, mas oferecer insights de investimento através de um motor de análise automatizada, apresentados em um dashboard interativo e de alta performance.
 
-<a id="-key-features"></a>
-## ✨ Key Features
+<a id="-principais-funcionalidades"></a>
+## ✨ Principais Funcionalidades
 
-- **Complete Fundamental Analysis:** Automatically calculated Valuation (P/E, P/B), Profitability (ROE, ROIC), and Debt ratios.
-- **Robust ETL Data Pipeline:** A resilient `Importer` module that processes, validates, and stores gigabytes of CVM data, featuring a quarantine system for corrupted records.
-- **Real-Time Quotes:** Integration with market APIs to provide up-to-date prices for stocks and cryptocurrencies.
-- **Secure Authentication:** Stateless authentication system via JWT (JSON Web Tokens).
-- **Unified Search:** Find any asset from the Brazilian market or crypto space in seconds.
-- **Clean Architecture:** Decoupled and testable backend with a clear separation between domain, application, and infrastructure layers.
+- **Análise Fundamentalista Completa:** Indicadores de Valuation (P/L, P/VP), Rentabilidade (ROE, ROIC) e Endividamento calculados automaticamente.
+- **Pipeline de Dados ETL Robusto:** Módulo de ingestão (`Importer`) que processa, valida e armazena de forma resiliente gigabytes de dados da CVM, com sistema de quarentena para dados corrompidos.
+- **Cotações em Tempo Real:** Integração com APIs de mercado para fornecer preços atualizados de ações e criptomoedas.
+- **Autenticação Segura:** Sistema de autenticação stateless via JWT (JSON Web Tokens).
+- **Busca Unificada:** Encontre qualquer ativo do mercado brasileiro ou cripto em segundos.
+- **Arquitetura Limpa (Clean Architecture):** Backend desacoplado e testável, com clara separação entre domínio, aplicação e infraestrutura.
 
-<a id="-architecture"></a>
-## 🏗️ Architecture
+<a id="-arquitetura"></a>
+## 🏗️ Arquitetura
 
-The system was designed with a focus on separation of concerns, scalability, and long-term maintainability, using **Clean Architecture** and **Domain-Driven Design (DDD)** principles.
+O sistema foi desenhado com foco em separação de responsabilidades, escalabilidade e manutenção a longo prazo, utilizando princípios de **Clean Architecture** e **Domain-Driven Design (DDD)**.
 
-- **Client Layer:** A Single Page Application (SPA) consumes data via optimized REST calls.
-- **API Layer:** Spring Boot provides secure endpoints (Stateless with JWT) and validates incoming requests.
-- **Domain & Application Layer:** The pure business logic (fundamental analysis calculations, valuation) resides here, completely isolated from external frameworks.
-- **Infrastructure & Data Layer:** This layer is responsible for data persistence in PostgreSQL and integrations with external services, such as market APIs (B3) and CVM file extraction.
+- **Client Layer:** Um SPA (Single Page Application) consome os dados via chamadas REST otimizadas.
+- **API Layer:** O Spring Boot provê endpoints seguros (Stateless com JWT) e valida as requisições de entrada.
+- **Domain & Application Layer:** A lógica de negócio pura (cálculos de análise fundamentalista, valuation) reside aqui, completamente isolada de frameworks externos.
+- **Infrastructure & Data Layer:** Camada responsável pela persistência de dados no PostgreSQL e pelas integrações com serviços externos, como APIs de mercado (B3) e a extração de arquivos da CVM.
 
-<a id="-data-flows"></a>
-## 🔀 Data Flows
+<a id="-fluxos-de-dados"></a>
+## 🔀 Fluxos de Dados
 
-### Flow 1: Stock Analysis Query
-How the system processes a user request to view a comprehensive asset analysis, cross-referencing database information with real-time external APIs:
+### Fluxo 1: Consulta de Análise de Ação
+Como o sistema processa a requisição de um usuário para visualizar a análise completa de um ativo, cruzando dados do banco com APIs externas em tempo real:
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor User as User
+    actor User as Usuário
     box API Layer
         participant Controller as StockController
     end
@@ -117,21 +117,21 @@ sequenceDiagram
     Controller->>Aggregator: getStockDetails("PETR4")
     Aggregator->>FundAnalysis: getAnalysis("PETR4")
     FundAnalysis->>Repo: findByTicker("PETR4")
-    Repo-->>FundAnalysis: StockAnalysis (from DB)
+    Repo-->>FundAnalysis: StockAnalysis (do BD)
     FundAnalysis-->>Aggregator: StockAnalysis
     Aggregator->>Market: getMarketData("PETR4")
     Market->>Brapi: HTTP GET
     Brapi-->>Market: Price JSON
     Market-->>Aggregator: MarketDataDTO
     Aggregator->>ValService: enrichWithValuation(Analysis, MarketData)
-    Note over ValService: Calculates P/E, P/B in real-time
+    Note over ValService: Calcula P/L, P/VP em tempo real
     ValService-->>Aggregator: Enriched DTO
     Aggregator-->>Controller: StockAnalysisDTO
-    Controller-->>User: 200 OK (Full JSON)
+    Controller-->>User: 200 OK (JSON Completo)
 ```
 
-### Flow 2: Scheduled CVM Data Import (ETL Pipeline)
-How the system ensures fundamental data is always up-to-date by fetching gigabytes of government files in an optimized and fault-tolerant manner:
+### Fluxo 2: Importação Agendada de Dados CVM (Pipeline ETL)
+Como o sistema garante que os dados fundamentalistas estejam sempre atualizados, buscando gigabytes de arquivos governamentais de forma otimizada e tolerante a falhas:
 
 ```mermaid
 sequenceDiagram
@@ -144,23 +144,23 @@ sequenceDiagram
     end
     box Infrastructure Layer
         participant Helper as CvmPersistenceHelper
-        participant DB as Database (PostgreSQL)
+        participant DB as Banco de Dados (PostgreSQL)
     end
-    box External Sources
+    box Fontes Externas
         participant CVM as dados.cvm.gov.br
     end
 
     Cron->>Sync: runSynchronization()
     Sync->>Local: processPendingFiles()
     Local->>CVM: HEAD Request (check ETag)
-    CVM-->>Local: 304 Not Modified (or 200 OK)
-    alt File was updated
+    CVM-->>Local: 304 Not Modified (ou 200 OK)
+    alt Arquivo foi atualizado
         Local->>CVM: GET .zip file
         CVM-->>Local: File Stream
         Local->>ImportSvc: processCvmCsv(stream)
-        Note over ImportSvc: Unzips, validates, and aggregates
+        Note over ImportSvc: Descompacta, valida e agrega
         ImportSvc->>Helper: saveBatchSafely(batch)
-        Helper->>DB: Atomic Batch Operation
+        Helper->>DB: Operação de Lote Atômico
         DB-->>Helper: OK
         Helper-->>ImportSvc: Done
         ImportSvc-->>Local: Success
@@ -168,22 +168,22 @@ sequenceDiagram
     Local-->>Sync: Done
 ```
 
-<a id="-design-decisions-adr"></a>
-## 🧠 Design Decisions (ADR)
+<a id="-decisões-de-design-adr"></a>
+## 🧠 Decisões de Design (ADR)
 
-- **1. `Company` vs. `Asset` Separation:** The domain model distinguishes the `Company` (legal entity with financials) from the `Asset` (tradable ticker with a price), allowing for the accurate cross-referencing of a single company's fundamental data against its multiple asset classes (e.g., common vs. preferred stock).
-- **2. Self-Healing Financial Statements:** A *Self-Healing* algorithm attempts to infer and correct inconsistencies in CVM balance sheets (where Assets ≠ Liabilities + Equity) before discarding the data, drastically increasing the availability of useful information.
-- **3. Quarantine for Corrupted Data:** Malformed CSV rows are isolated in a quarantine table, ensuring that a single bad record does not stop the entire pipeline from processing gigabytes of valid data.
+- **1. Separação `Company` vs. `Asset`:** O modelo de domínio distingue a `Empresa` (CNPJ, balanços) do `Ativo` (ticker, cotação), permitindo cruzar dados fundamentalistas de uma empresa com suas múltiplas classes de ativos (ON, PN) de forma precisa.
+- **2. Auto-Correção de Balanços:** Um algoritmo de *Self-Healing* tenta inferir e corrigir inconsistências nos balanços da CVM (Ativo ≠ Passivo + PL) antes de descartar os dados, aumentando drasticamente a disponibilidade de informações.
+- **3. Quarentena de Dados Corrompidos:** Linhas de CSV mal formatadas são isoladas em uma tabela de quarentena, garantindo que a falha em um registro não interrompa o processamento de gigabytes de dados válidos.
 
-<a id="-api-documentation"></a>
-## 📖 API Documentation
+<a id="-documentação-da-api"></a>
+## 📖 Documentação da API
 
-The complete and interactive API documentation, including all endpoints, DTOs, and authentication schemes, is available via Javadoc and can be viewed on the GitHub Pages deployment of this repository.
+A documentação completa e interativa da API, incluindo todos os endpoints, DTOs e esquemas de autenticação, está disponível através do Javadoc e pode ser visualizada no deploy do GitHub Pages deste repositório.
 
-🔗 **[Access Full Documentation](https://raphaelfeijosalles.github.io/acoes-ja-showcase/)**
+🔗 **[Acessar Documentação Completa](https://raphaelfeijosalles.github.io/acoes-ja-showcase/apidocs)**
 
 ---
 
 <p align="center">
-  Developed with ☕ and clean code by <a href="https://github.com/RaphaelFeijoSalles" target="_blank">Raphael Salles</a>.
+  Desenvolvido com ☕ e código limpo por <a href="https://github.com/RaphaelFeijoSalles" target="_blank">Raphael Salles</a>.
 </p>
