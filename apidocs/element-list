@@ -7,7 +7,6 @@ com.raphaelsalles.backend.domain.model
 com.raphaelsalles.backend.domain.model.enums
 com.raphaelsalles.backend.domain.repository
 com.raphaelsalles.backend.domain.service.ai
-com.raphaelsalles.backend.domain.service.crypto
 com.raphaelsalles.backend.domain.service.enrichment
 com.raphaelsalles.backend.domain.service.financial
 com.raphaelsalles.backend.domain.service.importer
