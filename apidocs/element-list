@@ -17,6 +17,7 @@ com.raphaelsalles.backend.domain.service.maintenance
 com.raphaelsalles.backend.domain.service.market
 com.raphaelsalles.backend.domain.service.scheduler
 com.raphaelsalles.backend.domain.service.search
+com.raphaelsalles.backend.domain.service.sync
 com.raphaelsalles.backend.domain.service.user
 com.raphaelsalles.backend.infra.config
 com.raphaelsalles.backend.infra.config.bootstrap
