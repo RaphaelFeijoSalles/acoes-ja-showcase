@@ -1,121 +1,253 @@
-[🇧🇷 Versão em Português](README.md)
+[🇧🇷 Leia em português](README.md)
 
 <p align="center">
-  <img src="images/acoes-ja-banner.png" alt="AçõesJá Banner">
+  <img src="images/acoes-ja-banner.png" alt="AçõesJá — Brazilian asset analysis">
+</p>
+
+<h1 align="center">Brazilian financial data, organized for analysis</h1>
+
+<p align="center">
+  Search assets, explore fundamentals and financial history, and maintain a personal watchlist in a full-stack experience.
 </p>
 
 <p align="center">
-  <strong>Financial Market Intelligence and Data Crossing Platform.</strong>
+  <img src="https://img.shields.io/badge/Java-25-orange?logo=openjdk&logoColor=white" alt="Java 25">
+  <img src="https://img.shields.io/badge/Spring_Boot-4.0.5-6DB33F?logo=springboot&logoColor=white" alt="Spring Boot 4.0.5">
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs&logoColor=white" alt="Next.js 16">
+  <img src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white" alt="React 19">
+  <img src="https://img.shields.io/badge/PostgreSQL-persistence-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL">
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Java-17%2B-orange?logo=java&logoColor=white" alt="Java 17+">
-    <img src="https://img.shields.io/badge/Spring%20Boot-3%2B-green?logo=spring&logoColor=white" alt="Spring Boot">
-    <img src="https://img.shields.io/badge/React-19%2B-blue?logo=react&logoColor=white" alt="React 19+">
-    <img src="https://img.shields.io/badge/PostgreSQL-18-blue?logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <a href="#experience">Experience</a> ·
+  <a href="#verified-features">Features</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#for-recruiters">For recruiters</a> ·
+  <a href="https://acoesja.com.br">Live demo</a> ·
+  <a href="https://linktr.ee/raphaelfeijosalles">Contact</a>
 </p>
 
-<p align="center">
-  <a href="#-screenshots">Screenshots</a> •
-  <a href="#-about-the-project">About</a> •
-  <a href="#-key-features">Features</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-data-flow">Data Flow</a>
-</p>
+> Educational financial analysis platform. Its content does not constitute investment advice.
 
-<a id="-screenshots"></a>
-## 📸 Screenshots
+## The idea
+
+Accounting statements and market data are usually scattered across multiple sources and formats. AçõesJá turns them into a single journey:
+
+1. search a company by ticker, name, or Brazilian company ID;
+2. inspect indicators and annual or quarterly statements;
+3. follow price history alongside accounting data;
+4. save tickers to a personal watchlist;
+5. export authorized analyses to `.xlsx`.
+
+The project also automates the ingestion of CVM annual/quarterly statements, company registration data, and FRE share data, while keeping history, controls, and import auditing.
+
+<a id="experience"></a>
+## Experience
 
 <table>
   <tr>
     <td valign="top" width="50%">
-      <br>
-      <b>Main Dashboard</b>
-      <img src="images/main-dashboard.png">
-      <br>
-      <i>Overview of indices, market quotes, and portfolio.</i>
+      <strong>Dashboard and watchlist</strong><br>
+      <img src="images/main-dashboard.png" alt="AçõesJá dashboard with asset search and watchlist">
+      <small>Entry point for search, market information, and saved tickers.</small>
     </td>
     <td valign="top" width="50%">
-      <br>
-      <b>Asset Analysis (PETR4)</b>
-      <img src="images/asset-detail-view.png" width="100%" alt="Asset Detail View">
-      <br>
-      <i>Dynamic charts and fundamental indicators.</i>
+      <strong>Asset analysis</strong><br>
+      <img src="images/asset-detail-view.png" alt="Asset detail page in AçõesJá">
+      <small>Fundamentals, market data, and annual or quarterly history.</small>
     </td>
   </tr>
   <tr>
     <td valign="top" width="50%">
-      <br>
-      <b>Tabular Data View</b>
-      <img src="images/tabular-data-view.png" width="100%" alt="tabular data view">
-      <br>
-      <i>Detailed comparison of annual financial statements.</i>
+      <strong>Financial history</strong><br>
+      <img src="images/tabular-data-view.png" alt="Tabular financial history view">
+      <small>Structured reading of periods and financial indicators.</small>
     </td>
     <td valign="top" width="50%">
-      <br>
-      <b>Unified Search Engine</b>
-      <img src="images/search-modal.png" width="100%" alt="Search Modal">
-      <br>
-      <i>Quick search for stocks, REITs (FIIs), BDRs, and cryptocurrencies.</i>
+      <strong>Unified search</strong><br>
+      <img src="images/search-modal.png" alt="Search by ticker, company name, or company ID">
+      <small>Public asset discovery by ticker, name, or company ID.</small>
     </td>
   </tr>
 </table>
 
-<a id="-about-the-project"></a>
-## 📌 About the Project
+### Public access
 
-**AçõesJá** is a full-stack ecosystem designed to cross-reference Brazilian financial market data with high performance. The system ingests and processes gigabytes of government accounting data directly from the **CVM** (Securities and Exchange Commission of Brazil) and structures it alongside real-time quotes and indicators from the **B3** Stock Exchange.
+<p align="center">
+  <img src="images/detalhes-sem-login.png" alt="Public VALE3 details with financial history and access states">
+  <small>Fundamentals and history are available without login, while authenticated features are clearly identified.</small>
+</p>
 
-The platform operates natively on a Freemium model, offering everything from quick views of the latest fiscal quarter to exporting dense financial spreadsheets (featuring a decade of historical data) for premium subscribers.
+### Authentication and consent
 
-<a id="-key-features"></a>
-## ✨ Key Features
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <strong>Password or Google sign-in</strong><br>
+      <img src="images/fluxo-login/modal-login.png" alt="Password or Google sign-in modal">
+      <small>Access to the watchlist, exports, and AI Professor.</small>
+    </td>
+    <td valign="top" width="50%">
+      <strong>Google integration</strong><br>
+      <img src="images/fluxo-login/login-google.png" alt="Continue with Google on the acoesja.com.br domain">
+      <small>Social sign-in connected to the public domain.</small>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" width="50%">
+      <strong>Versioned Terms of Use</strong><br>
+      <img src="images/fluxo-login/termos-de-uso.png" alt="Reading and accepting the Terms of Use">
+    </td>
+    <td valign="top" width="50%">
+      <strong>Privacy Policy</strong><br>
+      <img src="images/fluxo-login/politica-priv.png" alt="Reading and accepting the Privacy Policy">
+    </td>
+  </tr>
+</table>
 
-- **CVM + B3 Crossing Engine:** Ingestion of official balance sheets crossed with real-time market prices for instant Valuation multiples calculation.
-- **Optimized ETL Pipeline:** Structured data synchronizer designed to handle massive daily updates from government databases reliably.
-- **Cache & High Performance:** Employment of in-memory caching strategies to store heavy financial reports, drastically reducing database I/O.
-- **Integration Resilience:** Retry mechanisms and fault tolerance ensure system stability against oscillations or Rate Limits from external APIs (Brapi).
-- **Stateless Authentication:** Robust protection using the Auth0 platform with short-lived JWTs and rotating Refresh Tokens.
-- **Structured Export:** Dynamic `.xlsx` file generation engine formatted via *Apache POI* for offline financial modeling.
+### AI Professor in action
 
-<a id="-architecture"></a>
-## 🏗️ Architecture
+<p align="center">
+  <img src="images/professorIA-em-acao.png" alt="AI Professor comparing selected BBAS3 and PETR4 metrics">
+  <small>Selectable context, educational responses, and an explicit reminder to verify sources.</small>
+</p>
 
-The ecosystem adopts **Clean Architecture** and **Domain-Driven Design (DDD)** principles to ensure the isolation of pricing logic and fundamental analysis.
+### Administration
 
-- **Client Layer (React):** A reactive Single Page Application (SPA) that consumes the RESTful API optimally.
-- **API Layer (Spring Boot):** Security and routing layer that completely isolates the domain from the web framework.
-- **Domain & Infrastructure Layer:** Centralizes financial business rules, relational persistence in PostgreSQL, and synchronous/asynchronous integrations.
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <strong>Guided data bootstrap</strong><br>
+      <img src="images/painel-admin/bootstrap-guiado.png" alt="Administrative CVM, FRE, and statements import pipeline">
+    </td>
+    <td valign="top" width="50%">
+      <strong>Legal document publishing</strong><br>
+      <img src="images/painel-admin/publicação-de-termos.png" alt="Administrative legal document editor with preview">
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" colspan="2">
+      <strong>User and role management</strong><br>
+      <img src="images/painel-admin/manejo-de-usuarios.png" alt="Administrative user and role management area">
+    </td>
+  </tr>
+</table>
 
-<a id="-data-flow"></a>
-## 🔀 Data Flow (Core)
+<a id="verified-features"></a>
+## Verified features
+
+### For asset analysis
+
+- Public search and asset details.
+- Fundamental indicators and DFP/ITR financial history.
+- Historical quotes associated with financial periods.
+- Authenticated personal ticker watchlist.
+- XLSX export for authorized profiles.
+- Contextual AI Professor for explanations and selected-metric comparisons.
+
+### Identity and UX
+
+- Password registration and login.
+- Google social login.
+- JWTs in HttpOnly cookies and silent renewal.
+- Role-based access and protected administration routes.
+- Versioned Terms of Use and Privacy Policy.
+- Loading, error, empty, unavailable, and access-restricted states.
+
+### Data operations
+
+- CVM DFP/ITR, company registration, and FRE ingestion.
+- Separation of consolidated and individual statements.
+- Historical quote persistence.
+- Brapi market integration with AlphaVantage as a historical fallback.
+- Import history, errors, auditing, and reprocessing.
+- Spreadsheet generation with Apache POI.
+
+<a id="how-it-works"></a>
+## How it works
+
+```mermaid
+flowchart LR
+    Person[User] -->|search and analysis| Web[Next.js 16 + React 19]
+    Web -->|REST API + cookies| API[Java 25 + Spring Boot 4]
+    API --> DB[(PostgreSQL)]
+    CVM[CVM: DFP / ITR / registry / FRE] --> PIPE[Ingestion pipeline]
+    PIPE --> DB
+    MARKET[Brapi / AlphaVantage] --> API
+    API --> XLSX[XLSX export]
+    API --> AI[Configurable AI Professor]
+```
 
 ```mermaid
 sequenceDiagram
-    autonumber
-    actor User
-    box API & Domain Layer
-        participant App as AçõesJá Core
-    end
-    box External Data
-        participant DB as PostgreSQL
-        participant CVM as CVM Data (Gov)
-        participant B3 as Market Data API
-    end
+    actor Person as User
+    participant Web as AçõesJá Web
+    participant API as AçõesJá API
+    participant DB as PostgreSQL
 
-    User->>App: Fetches fundamental analysis (e.g., WEGE3)
-    App->>DB: Retrieves Balance Sheet History
-    DB-->>App: Accounting Entity
-    App->>B3: Fetch Real-time Quote
-    B3-->>App: JSON Market Data
-    Note over App: Executes multiples and profitability calculations
-    App-->>User: Returns Consolidated Analysis
-
+    Person->>Web: Searches for a ticker
+    Web->>API: Search and details
+    API->>DB: Company, asset, and history
+    DB-->>API: Persisted data
+    API-->>Web: Indicators and series
+    Web-->>Person: Historical analysis
+    opt Authenticated user
+        Person->>Web: Saves the ticker
+        Web->>API: Updates watchlist
+    end
 ```
----
+
+## Technology stack
+
+| Backend | Frontend | Data and delivery |
+|---|---|---|
+| Java 25 | Next.js 16 | PostgreSQL |
+| Spring Boot 4.0.5 | React 19 | Flyway |
+| Spring Security | TypeScript 5.9 | Docker |
+| Spring Data JPA | TanStack Query | GitHub Actions |
+| Spring AI/Caffeine | Axios/Zustand | Fly.io configuration |
+| Apache POI | Recharts/Tailwind | Dependabot |
+
+## High-level technical decisions
+
+### A company is not a ticker
+
+`Company` represents the issuer, while `Asset` represents a traded instrument. Multiple share classes can therefore share the issuer's financial statements.
+
+### Migrations own schema evolution
+
+Flyway records database changes, while Hibernate validates the structure during normal execution.
+
+### Tokens stay outside JavaScript
+
+JWTs travel in HttpOnly cookies; the frontend coordinates session renewal without directly reading the tokens.
+
+### Consolidated and individual scopes stay separate
+
+The ingestion pipeline identifies the accounting scope and prioritizes consolidated statements to preserve analytical consistency.
+
+<a id="for-recruiters"></a>
+## For recruiters
+
+This project demonstrates full-stack work in a domain that requires business rules, numeric precision, and integrations:
+
+- REST APIs and financial processing with Java 25 and Spring Boot 4.
+- Data-oriented UI with Next.js 16, React 19, and TypeScript.
+- Relational modeling with JPA, PostgreSQL, and Flyway migrations.
+- Password/Google authentication, JWTs in HttpOnly cookies, and role-based access.
+- Auditable public CVM data pipelines and market data integrations.
+- Automated tests and continuous integration across the backend and frontend repositories.
+
+## Let's talk
+
+If you would like to discuss the product, its technical decisions, or a Full-Stack Java + React/Next.js opportunity:
+
 <p align="center">
-  Developed with ☕ and clean code by <a href="https://linktr.ee/raphaelfeijosalles" target="_blank">Raphael Salles</a>.
+  <a href="https://linktr.ee/raphaelfeijosalles"><strong>Contact and professional profile</strong></a>
 </p>
+
+---
+
 <p align="center">
-  <small>Copyright © 2026 Raphael Salles. All rights reserved. The code in this repository is proprietary and does not have an open-source license. Unauthorized use, copying, distribution, or modification is strictly prohibited.</small>
+  Built by Raphael Salles · Proprietary project, not distributed under an open-source license.
 </p>
