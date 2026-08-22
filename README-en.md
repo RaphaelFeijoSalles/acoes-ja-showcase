@@ -29,6 +29,10 @@
 
 > Educational financial analysis platform. Its content does not constitute investment advice.
 
+> Public beta/portfolio demo with no billing or SLA. The AI Professor's external
+> provider, commercial quotas, and canary remain disabled; the interface reports
+> this unavailability explicitly.
+
 ## The idea
 
 Accounting statements and market data are usually scattered across multiple sources and formats. AçõesJá turns them into a single journey:
@@ -85,7 +89,7 @@ The project also automates the ingestion of CVM annual/quarterly statements, com
     <td valign="top" width="50%">
       <strong>Password or Google sign-in</strong><br>
       <img src="images/fluxo-login/modal-login.png" alt="Password or Google sign-in modal">
-      <small>Access to the watchlist, exports, and AI Professor.</small>
+      <small>Access to the watchlist and exports; the AI Professor requires a controlled provider activation.</small>
     </td>
     <td valign="top" width="50%">
       <strong>Google integration</strong><br>
@@ -105,11 +109,11 @@ The project also automates the ingestion of CVM annual/quarterly statements, com
   </tr>
 </table>
 
-### AI Professor in action
+### AI Professor — prepared experience
 
 <p align="center">
   <img src="images/professorIA-em-acao.png" alt="AI Professor comparing selected BBAS3 and PETR4 metrics">
-  <small>Selectable context, educational responses, and an explicit reminder to verify sources.</small>
+  <small>Flow captured in a controlled environment. In the current public demo, the provider is disabled and no mock is presented as a real LLM response.</small>
 </p>
 
 ### Administration
@@ -140,10 +144,10 @@ The project also automates the ingestion of CVM annual/quarterly statements, com
 
 - Public search and asset details.
 - Fundamental indicators and DFP/ITR financial history.
-- Historical quotes associated with financial periods.
+- Persisted historical quotes associated with financial periods when available; coverage is still incremental.
 - Authenticated personal ticker watchlist.
 - XLSX export for authorized profiles.
-- Contextual AI Professor for explanations and selected-metric comparisons.
+- AI Professor interface, context, and guardrails; the real provider remains disabled in the public demo.
 
 ### Identity and UX
 

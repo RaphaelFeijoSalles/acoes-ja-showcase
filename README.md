@@ -29,6 +29,10 @@
 
 > Plataforma educacional de análise financeira. O conteúdo não constitui recomendação de investimento.
 
+> Demonstração pública em estágio beta/portfólio, sem cobrança ou SLA. O provider
+> externo do Professor IA, suas quotas comerciais e o canário permanecem
+> desligados; a interface informa essa indisponibilidade de forma explícita.
+
 ## A proposta
 
 Informações contábeis e dados de mercado costumam estar espalhados por fontes e formatos diferentes. O AçõesJá transforma esse material em uma jornada única:
@@ -85,7 +89,7 @@ O projeto também automatiza a ingestão de DFP, ITR, cadastro de companhias e F
     <td valign="top" width="50%">
       <strong>Login por senha ou Google</strong><br>
       <img src="images/fluxo-login/modal-login.png" alt="Modal de login por senha ou Google">
-      <small>Acesso à carteira, exportação e Professor IA.</small>
+      <small>Acesso à carteira e exportação; o Professor IA depende de ativação controlada do provider.</small>
     </td>
     <td valign="top" width="50%">
       <strong>Integração Google</strong><br>
@@ -105,11 +109,11 @@ O projeto também automatiza a ingestão de DFP, ITR, cadastro de companhias e F
   </tr>
 </table>
 
-### Professor IA em ação
+### Professor IA — experiência preparada
 
 <p align="center">
   <img src="images/professorIA-em-acao.png" alt="Professor IA comparando métricas selecionadas de BBAS3 e PETR4">
-  <small>Contexto selecionável, resposta educacional e aviso explícito para conferência das fontes.</small>
+  <small>Fluxo registrado em ambiente controlado. Na demonstração pública atual, o provider está desligado e nenhum mock é apresentado como resposta real de LLM.</small>
 </p>
 
 ### Operação administrativa
@@ -140,10 +144,10 @@ O projeto também automatiza a ingestão de DFP, ITR, cadastro de companhias e F
 
 - Pesquisa e detalhes públicos.
 - Indicadores fundamentalistas e históricos DFP/ITR.
-- Histórico de cotações associado aos períodos financeiros.
+- Histórico de cotações persistidas associado aos períodos financeiros quando disponível; a cobertura ainda é incremental.
 - Carteira de acompanhamento após autenticação.
 - Exportação XLSX para perfis autorizados.
-- Professor IA contextual para explicações e comparação de métricas selecionadas.
+- Interface, contexto e guardrails do Professor IA; o provider real permanece desligado na demonstração pública.
 
 ### Identidade e experiência
 
